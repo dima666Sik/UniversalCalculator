@@ -10,6 +10,30 @@ public class Logic {
         int count = 0;
         for (int i = 0; i != exercise.length() + 1; i++) {
             if (i != exercise.length() &&
+                    exercise.charAt(i) == '-' &&
+                    exercise.charAt(i + 1) != '+' &&
+                    exercise.charAt(i + 1) != '*' &&
+                    exercise.charAt(i + 1) != '/' &&
+                    exercise.charAt(i + 1) != '(' &&
+                    exercise.charAt(i + 1) != ')') {
+                if (i == 0) {
+                    temp += exercise.charAt(i) + "" + exercise.charAt(i + 1) + "";
+                    i++;
+                    continue;
+                }
+                if (i != 0 && (
+                        exercise.charAt(i - 1) == '+' ||
+                                exercise.charAt(i - 1) == '*' ||
+                                exercise.charAt(i - 1) == '/' ||
+                                exercise.charAt(i - 1) == '(' ||
+                                exercise.charAt(i - 1) == ')')) {
+                    temp += exercise.charAt(i) + "" + exercise.charAt(i + 1) + "";
+                    i++;
+                    continue;
+                }
+
+            }
+            if (i != exercise.length() &&
                     exercise.charAt(i) != '+' &&
                     exercise.charAt(i) != '-' &&
                     exercise.charAt(i) != '*' &&
