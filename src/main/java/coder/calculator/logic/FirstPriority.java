@@ -140,7 +140,6 @@ public class FirstPriority extends Logic {
                         counterR++;
                     }
                     if (counterL == 0 && counterR == 0) {
-//                        i++;
                         continue;
                     }
                     if (counterL == counterR) {

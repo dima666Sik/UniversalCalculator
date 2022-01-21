@@ -2,7 +2,7 @@ package coder.calculator.logic;
 
 import java.util.ArrayList;
 
-public class SecondPriority extends Logic{
+public class SecondPriority extends Logic {
     private ArrayList<String> exercise = new ArrayList<String>();
     private double sum;
 
@@ -24,6 +24,10 @@ public class SecondPriority extends Logic{
                 i = 0;
             } else if (exercise.get(i).charAt(0) == '/') {
                 sum = Double.parseDouble(exercise.get(i - 1)) / Double.parseDouble(exercise.get(i + 1));
+                removePartExpression(i, sum, exercise);
+                i = 0;
+            } else if (exercise.get(i).charAt(0) == '%') {
+                sum = Double.parseDouble(exercise.get(i - 1)) % Double.parseDouble(exercise.get(i + 1));
                 removePartExpression(i, sum, exercise);
                 i = 0;
             }

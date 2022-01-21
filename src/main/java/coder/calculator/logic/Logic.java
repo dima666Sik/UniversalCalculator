@@ -6,12 +6,14 @@ public class Logic {
     private ArrayList<String> exercise = new ArrayList<>();
 
     public void setExercise(String exercise) {
+        if(searchUnnecessarySymbolsInArray(exercise)) return;
         String temp = "";
         int count = 0;
         for (int i = 0; i != exercise.length() + 1; i++) {
             if (i != exercise.length() &&
                     exercise.charAt(i) == '-' &&
                     exercise.charAt(i + 1) != '+' &&
+                    exercise.charAt(i + 1) != '%' &&
                     exercise.charAt(i + 1) != '*' &&
                     exercise.charAt(i + 1) != '/' &&
                     exercise.charAt(i + 1) != '(' &&
@@ -25,6 +27,7 @@ public class Logic {
                         exercise.charAt(i - 1) == '+' ||
                                 exercise.charAt(i - 1) == '*' ||
                                 exercise.charAt(i - 1) == '/' ||
+                                exercise.charAt(i - 1) == '%' ||
                                 exercise.charAt(i - 1) == '(' ||
                                 exercise.charAt(i - 1) == ')')) {
                     temp += exercise.charAt(i) + "" + exercise.charAt(i + 1) + "";
@@ -38,6 +41,7 @@ public class Logic {
                     exercise.charAt(i) != '-' &&
                     exercise.charAt(i) != '*' &&
                     exercise.charAt(i) != '/' &&
+                    exercise.charAt(i) != '%' &&
                     exercise.charAt(i) != '(' &&
                     exercise.charAt(i) != ')') {
                 temp += exercise.charAt(i);
@@ -51,6 +55,33 @@ public class Logic {
                 }
             }
         }
+    }
+
+    private boolean searchUnnecessarySymbolsInArray(String exercise) {
+        for (int i = 0; i < exercise.length() + 1; i++) {
+            if (i != exercise.length() &&
+                    (exercise.charAt(i) != '+' &&
+                            exercise.charAt(i) != '-' &&
+                            exercise.charAt(i) != '%' &&
+                            exercise.charAt(i) != '*' &&
+                            exercise.charAt(i) != '/' &&
+                            exercise.charAt(i) != '(' &&
+                            exercise.charAt(i) != ')' &&
+                            exercise.charAt(i) != '1' &&
+                            exercise.charAt(i) != '2' &&
+                            exercise.charAt(i) != '3' &&
+                            exercise.charAt(i) != '4' &&
+                            exercise.charAt(i) != '5' &&
+                            exercise.charAt(i) != '6' &&
+                            exercise.charAt(i) != '7' &&
+                            exercise.charAt(i) != '8' &&
+                            exercise.charAt(i) != '9' &&
+                            exercise.charAt(i) != '0')) {
+                System.out.println("You enter unnecessary symbols in array");
+                return true;
+            }
+        }
+        return false;
     }
 
     public void searchInMassString() {
