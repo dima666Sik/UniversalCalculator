@@ -1,7 +1,7 @@
 # UniversalCalculator
 ## Preview from dima-coder =)!
 1. This project use console.
-2. Universal calculator can resolve main exercise (for example: 11+21\*4/2-1) and hard (for example: (1+2-(5\*9-(18\*5))+7)\*(1+21-(5\*4))). 
+2. Universal calculator can resolve main exercise (for example: 11+21\*4/2-1) and hard (for example: (1+2-(5\*9-(18\*5))+7)\*(1+21-(5\*4))) or (10+(2455-65950*(43-45+34+(343*(34-8+8)+(893+9)))))+(10+(2455-65950*(43-45+34+(343*(34-8+8)+(893+9))))). 
 3. The user can use actions such as: +, -, /, *, %. Also user can use () in your exercise.
 
 ## Photo
